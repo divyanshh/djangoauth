@@ -6,9 +6,9 @@ from .views import UserViewSet
 
 # Create a router for the UserViewSet
 router = DefaultRouter()
-router.register(r'users', UserViewSet)
+router.register(r"users", UserViewSet)
 
 urlpatterns = [
-    path('api/user/profile/', views.UserProfileView.as_view(), name='user-profile'),
-    path('api/', include(router.urls)),
+    path("api/user/profile/", views.UserProfileView.as_view(), name="user-profile"),
+    path("api/", include(router.urls)),
 ]

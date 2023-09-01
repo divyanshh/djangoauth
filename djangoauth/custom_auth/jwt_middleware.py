@@ -15,8 +15,8 @@ class JWTMiddleware:
         If the token is valid, we update the request with user details
         If the token is invalid, we let the flow continue as usual
         """
-        auth_header = request.META.get('HTTP_AUTHORIZATION', '')
-        if auth_header.startswith('Bearer '):
+        auth_header = request.META.get("HTTP_AUTHORIZATION", "")
+        if auth_header.startswith("Bearer "):
             jwt_auth = JWTAuthentication()
             user, _ = jwt_auth.authenticate(request)
             if user is not None:

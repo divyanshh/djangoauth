@@ -12,6 +12,7 @@ class UserViewSet(viewsets.ModelViewSet):
     """
     Enables router urls
     """
+
     queryset = User.objects.all()
     serializer_class = UserSerializer
 
@@ -24,10 +25,11 @@ class UserProfileView(APIView):
 
     fetches first name and last name from the JWT user details and returns them
     """
+
     def get(self, request):
         user = request.user
         response_data = {
-            'first_name': user.first_name,
-            'last_name': user.last_name,
+            "first_name": user.first_name,
+            "last_name": user.last_name,
         }
         return Response(response_data)
