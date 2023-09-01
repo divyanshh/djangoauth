@@ -5,6 +5,7 @@ class JWTMiddleware:
     """
     Middleware to add user details to the request object
     """
+
     def __init__(self, get_response):
         self.get_response = get_response
 
