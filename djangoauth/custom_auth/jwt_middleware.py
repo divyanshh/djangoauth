@@ -1,9 +1,10 @@
-# your_app/middleware/jwt_middleware.py
-
 from rest_framework_simplejwt.authentication import JWTAuthentication
 
 
 class JWTMiddleware:
+    """
+    Middleware to add user details to the request object
+    """
     def __init__(self, get_response):
         self.get_response = get_response
 
