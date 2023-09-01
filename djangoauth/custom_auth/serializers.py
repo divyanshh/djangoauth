@@ -3,6 +3,9 @@ from django.contrib.auth.models import User
 
 
 class UserSerializer(serializers.ModelSerializer):
+    """
+    Serializer to be used for router urls
+    """
     class Meta:
         model = User
         fields = ('id', 'username', 'email', 'first_name', 'last_name')

@@ -9,6 +9,9 @@ from .serializers import UserSerializer
 
 
 class UserViewSet(viewsets.ModelViewSet):
+    """
+    Enables router urls
+    """
     queryset = User.objects.all()
     serializer_class = UserSerializer
 
@@ -16,6 +19,11 @@ class UserViewSet(viewsets.ModelViewSet):
 @authentication_classes([JWTAuthentication])
 @permission_classes([IsAuthenticated])
 class UserProfileView(APIView):
+    """
+    Returns user details
+
+    fetches first name and last name from the JWT user details and returns them
+    """
     def get(self, request):
         user = request.user
         response_data = {
